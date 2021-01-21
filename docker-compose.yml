@@ -25,6 +25,10 @@ services:
         depends_on:
             - redis
             - db
+        ports:
+            - 8088:8088
+        environment:
+            DATABASE_URI: $DATABASE_URI
         networks:
             - queue-network
             - db-network
